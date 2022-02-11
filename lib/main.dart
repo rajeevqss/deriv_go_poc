@@ -1,6 +1,7 @@
 import 'package:deriv_go_app/screens/home/home.dart';
 import 'package:deriv_go_app/state/available_contract/contract_cubit.dart';
 import 'package:deriv_go_app/state/home/home_cubit.dart';
+import 'package:deriv_go_app/state/tick/tick_cubit.dart';
 import 'package:deriv_go_app/state_emitter/home_cubit_state_emitter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deriv_api/services/connection/api_manager/connection_information.dart';
@@ -20,8 +21,7 @@ class MyApp extends StatelessWidget {
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(BuildContext context) => MaterialApp(
       title: 'Sample Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -37,7 +37,6 @@ class MyApp extends StatelessWidget {
       ),
       home: const MyHomePage(title: 'Sample Demo'),
     );
-  }
 }
 
 class MyHomePage extends StatefulWidget {
@@ -75,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // Register Blocs.
     BlocManager.instance.register(HomeCubit());
     BlocManager.instance.register(ContractCubit());
+    BlocManager.instance.register(TickCubit());
 
     // Register State Emitters.
     EventDispatcher(BlocManager.instance)
