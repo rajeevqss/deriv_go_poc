@@ -52,13 +52,20 @@ dependencies:
       path: packages/deriv_lint/
       ref: dev
 
+  deriv_chart:
+    git:
+      url: git@github.com:regentmarkets/flutter-chart.git
+      ref: dev
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  integration_test:           # new
-    sdk: flutter              # new
-  test: ^1.14.4               # new
 
+  bloc_test: ^8.0.0
+  build_runner:
+  mockito: ^5.0.8           # new
+  moor_generator: ^4.3.0
+  intl_utils: ^2.0.0
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
